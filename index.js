@@ -49,6 +49,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);
 });
-
-// 323ySikevxqW1n67
-// vikramjitpersonal_db_user

@@ -60,5 +60,6 @@ block content
                 td.text-center
                   a.btn.btn-sm.btn-warning.me-2(href="/users/edit/"+u._id title="Edit User")
                     i.bi.bi-pencil-fill
-                  a.btn.btn-sm.btn-danger(href="/users/delete/"+u._id title="Delete User" onclick="return confirm('Are you sure you want to delete this user?');")
-                    i.bi.bi-trash-fill
+                  form.d-inline(method="POST" action="/users/delete/"+u._id+"?_method=DELETE")
+                    button.btn.btn-sm.btn-danger(type="submit" onclick="return confirm('Are you sure you want to delete this user?');")
+                      i.bi.bi-trash-fill
