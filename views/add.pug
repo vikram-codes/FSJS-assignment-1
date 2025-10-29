@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  .card
+    .card-body
+      h2.card-title.mb-4 Add User
+      form(method="POST" action="/users/add")
+        include _form_fields.pug
+        button.btn.btn-success(type="submit")
+          i.bi.bi-person-plus-fill.me-2
+          | Create User

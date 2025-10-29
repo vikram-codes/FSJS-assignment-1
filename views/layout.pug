@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= title
+    // Bootstrap 5 CSS
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
+    // Bootstrap Icons
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css")
+    style.
+      body {
+        background-color: #f8f9fa;
+      }
+      .card {
+        border-radius: 1rem;
+      }
+      .table-hover tbody tr:hover {
+        background-color: #e9f5ff;
+      }
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.mb-4
+      .container-fluid
+        a.navbar-brand(href="/") User Management
+        button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav")
+          span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+          ul.navbar-nav.me-auto
+            li.nav-item
+              a.nav-link(class=title==='Users' ? 'active' : '', href="/users") Users
+            li.nav-item
+              a.nav-link(class=title==='Add User' ? 'active' : '', href="/users/add") Add User
+    .container
+      block content
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js")

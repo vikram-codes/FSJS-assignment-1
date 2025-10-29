@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .card
+    .card-body
+      h2.card-title.mb-4 Update User
+      form(method="POST" action="/users/edit/"+user._id)
+        include _form_fields.pug
+        button.btn.btn-primary(type="submit")
+          i.bi.bi-save-fill.me-2
+          | Save Changes
+      hr
+      form(method="POST" action="/users/delete/"+user._id+"?_method=DELETE")
+        button.btn.btn-danger(type="submit" onclick="return confirm('Delete this user?');")
+          i.bi.bi-trash-fill.me-2
+          | Delete User

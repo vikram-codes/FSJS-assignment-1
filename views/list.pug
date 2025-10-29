@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  style.
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card-header {
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .table thead th {
+      background-color: #6c63ff;
+      color: #fff;
+    }
+    .table-hover tbody tr:hover {
+      background-color: #e0e0ff;
+    }
+    .btn-warning {
+      background: linear-gradient(90deg, #f6d365, #fda085);
+      border: none;
+      color: #fff;
+    }
+    .btn-danger {
+      background: linear-gradient(90deg, #f85032, #e73827);
+      border: none;
+      color: #fff;
+    }
+
+  h1.mb-4 Users
+  if users.length === 0
+    div.alert.alert-info No users yet. Add one!
+  else
+    div.card.shadow-sm
+      div.card-header.d-flex.justify-content-between.align-items-center
+        span Users List
+        a.btn.btn-success.btn-sm(href="/users/add" title="Add User")
+          i.bi.bi-plus-lg.me-1
+          | Add User
+      div.table-responsive
+        table.table.table-striped.table-hover.table-bordered.align-middle.mb-0
+          thead
+            tr
+              th Last Name
+              th First Name
+              th DOB
+              th City
+              th Email
+              th.text-center Actions
+          tbody
+            each u in users
+              tr
+                td= u.lastName
+                td= u.firstName
+                td= u.dob ? u.dob.toISOString().slice(0,10) : ''
+                td= u.city
+                td= u.email
+                td.text-center
+                  a.btn.btn-sm.btn-warning.me-2(href="/users/edit/"+u._id title="Edit User")
+                    i.bi.bi-pencil-fill
+                  a.btn.btn-sm.btn-danger(href="/users/delete/"+u._id title="Delete User" onclick="return confirm('Are you sure you want to delete this user?');")
+                    i.bi.bi-trash-fill

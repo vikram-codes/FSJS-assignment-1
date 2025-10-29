@@ -1,0 +1,34 @@
+// Form partial with placeholders and clean spacing
+.form-group.mb-3
+  label Last Name *
+  input.form-control(type="text", name="lastName", required, placeholder="Enter last name", value=(user && user.lastName) || '')
+.form-group.mb-3
+  label First Name *
+  input.form-control(type="text", name="firstName", required, placeholder="Enter first name", value=(user && user.firstName) || '')
+.form-group.mb-3
+  label Date of Birth *
+  input.form-control(type="date", name="dob", required, value=(user && user.dob ? user.dob.toISOString().slice(0,10) : ''))
+.form-group.mb-3
+  label Address 1 *
+  input.form-control(type="text", name="address1", required, placeholder="Street address", value=(user && user.address1) || '')
+.form-group.mb-3
+  label Address 2
+  input.form-control(type="text", name="address2", placeholder="Apartment, suite, etc.", value=(user && user.address2) || '')
+.form-group.mb-3
+  label City *
+  input.form-control(type="text", name="city", required, placeholder="City", value=(user && user.city) || '')
+.form-group.mb-3
+  label Postal Code *
+  input.form-control(type="text", name="postalCode", required, placeholder="Postal Code", value=(user && user.postalCode) || '')
+.form-group.mb-3
+  label Country *
+  input.form-control(type="text", name="country", required, placeholder="Country", value=(user && user.country) || '')
+.form-group.mb-3
+  label Phone Number *
+  input.form-control(type="text", name="phoneNumber", required, placeholder="Phone number", value=(user && user.phoneNumber) || '')
+.form-group.mb-3
+  label Email *
+  input.form-control(type="email", name="email", required, placeholder="Email address", value=(user && user.email) || '')
+.form-group.mb-3
+  label Notes
+  textarea.form-control(name="notes", rows="3", placeholder="Additional notes")= (user && user.notes) || ''
